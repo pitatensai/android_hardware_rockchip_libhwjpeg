@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * author: kevin.chen@rock-chips.com
+ * author: zj@rock-chips.com
  */
 
-#ifndef __RK_ENCODER_WRAPER_H__
-#define __RK_ENCODER_WRAPER_H__
-
-#include "ExifBuilder.h"
+#ifndef __RK_EXIF_H__
+#define __RK_EXIF_H__
 
 typedef struct {
     uint32_t num;
@@ -96,38 +94,4 @@ typedef struct {
     RkGPSInfo *gpsInfo;
 } RkExifInfo;
 
-typedef struct {
-    /* Pointer to thumbnail image, or NULL if not available */
-    unsigned char *thumb_data;
-    /* Number of bytes in thumbnail image at thumbData */
-    int thumb_size;
-
-    unsigned char *header_buf;
-    int header_len;
-
-    RkExifInfo *exifInfo;
-} RkHeaderData;
-
-/*
- * Parse from RkExifInfo -> ExifData.
- *
- * param[in] exifInfo - populated exif information outside
- * param[out] edata   - EXIF data for type #ExifBuilder
- */
-void parse_exif_info(RkExifInfo *exifInfo, ExifData *edata);
-
-/*
- * Release memery allocated at #exif_info_parser
- */
-void release_exif_data(ExifData *edata);
-
-/*
- * Generate JPEG exif app1 header.
- *
- * param[in] data     - RkHeaderData
- * param[out] buf     - pointer to buffer pointer containing app1 header data.
- * param[out] len     - pointer to hold the buf number bytes
- */
-bool generate_app1_header(RkHeaderData *data, unsigned char **buf, int *len);
-
-#endif  // __RK_ENCODER_WRAPER_H__
+#endif // __RK_EXIF_H__
