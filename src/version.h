@@ -18,7 +18,7 @@
 #ifndef __VERSION_H__
 #define __VERSION_H__
 
-#define HWJPEG_VERSION_INFO     "git-2c9928c author: Chen Jinsen 2021-10-10 [project]: Update to support output version info"
-#define HWJPEG_BUILD_INFO       "built-Che 2021-10-10 12:09:56"
+#define HWJPEG_VERSION_INFO     ""
+#define HWJPEG_BUILD_INFO       "built-Shi 2023-09-28 12:06:05"
 
 #endif  // __VERSION_H__
